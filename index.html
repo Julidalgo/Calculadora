@@ -74,7 +74,7 @@
             <button class="button operator" onclick="convertToFahrenheit()">T</button>
             <button class="button operator" onclick="convertidordeGramosakilogramos()">P</button>
             <button class="button operator" onclick="convertidordeBaraPSI()">Pre</button>
-            <button class="button operator" onclick="convertirdePesosaDolares()"></button>
+            <button class="button operator" onclick="convertirdePesosaDolares()">$</button>
         </div>
     </div>
 
@@ -133,9 +133,16 @@
             updateDisplay();
         }
 
-        function convertidordeGramosakilogramos() {
+        function convertidordeBaraPSI() {
             if (currentInput === '') return;
             let result = (parseFloat(currentInput) * 14.5038);
+            currentInput = result.toString();
+            updateDisplay();
+        }
+
+        function convertirdePesosaDolares() {
+            if (currentInput === '') return;
+            let result = (parseFloat(currentInput) * 4127.04);
             currentInput = result.toString();
             updateDisplay();
         }
